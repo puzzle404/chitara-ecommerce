@@ -3,6 +3,8 @@ class SandalsController < ApplicationController
   def index
     @sandals = Sandal.all
   end
+ def show
+ end
 
 
   def new
