@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>All Sandals</h2>
+
+  <div class="d-flex "  >
+    <% @sandals.each do |sandal| %>
+      <div class="card m-2 p-1">
+        <p>Model: <%= sandal.model %> </p>
+        <p>Unit price of <%= number_to_currency(sandal.price) %></p>
+        <p>Description: <%= sandal.description %></p>
+        <p>
+          <%= link_to "Edit", edit_sandal_path(sandal) %> |
+          <%= link_to "Delete", sandal_path(sandal), method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= button_to "Add #{sandal.model} to cart", order_items_path(:sandal_id => sandal.id) %>
+        </p>
+      </div>
+    <% end%>
+  </div>
+  <%= link_to "New sandal", new_sandal_path %>
+</div>

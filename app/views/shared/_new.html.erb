@@ -1,0 +1,18 @@
+<div class="container ">
+
+  <div class="mx-auto  card align-items-center" style = "width:300px">
+    <%= simple_form_for(@sandal) do |f| %>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :model, required: true, autofocus: true, placeholder: "Enter sandal name" %>
+      </p>
+      <p>
+        <%= f.label :price %><br>
+        <%= f.number_field :price, required: true %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
