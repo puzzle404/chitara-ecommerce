@@ -1,0 +1,17 @@
+.rounded-card {
+  border-radius: 8px;
+}
+.image-border-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: 100ms;
+}
+
+.shadow {
+  box-shadow: 12px 12px 2px 1px rgba(53, 52, 52, 0.2);
+}
