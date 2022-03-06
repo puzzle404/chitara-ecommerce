@@ -11,6 +11,10 @@
         <%= f.number_field :price, required: true %>
       </p>
       <p>
+        <%= f.label :description %><br>
+        <%= f.text_field :description, required: true %>
+      </p>
+      <p>
         <%= f.submit %>
       </p>
     <% end %>

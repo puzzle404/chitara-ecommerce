@@ -15,7 +15,7 @@
           <p>
           <%= link_to "Edit", edit_sandal_path(sandal) %> |
           <%= link_to "Delete", sandal_path(sandal), method: :delete, data: {confirm: "Are you sure?"} %>
-          <%= button_to "Add #{sandal.model} to cart", order_items_path(:sandal_id => sandal.id), :class =>'btn btn-primary mx-auto px-5 align-center ', :style => "width:100%" %>
+          <%= button_to "Add #{sandal.model} to cart", order_items_path(sandal_id: sandal.id), :class =>'btn btn-primary mx-auto px-5 align-center ', :style => "width:100%" %>
         </p>
         </div>
       </div>

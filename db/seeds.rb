@@ -18,6 +18,8 @@ sandal8 = Sandal.create(model: "Sandalia8", price: 4000, description: "Sandalia 
 sandal9= Sandal.create(model: "Sandalia9", price: 4000, description: "Sandalia hecha a mano")
 sandal10 = Sandal.create(model: "Sandalia10", price: 4000, description: "Sandalia hecha a mano")
 
+order1 = Order.create(comment: "Hola", user_id: 1)
+
 puts "Total number of sandals: #{Sandal.all.count}"
 puts "sandal models: #{Sandal.all.pluck("model")}"
 puts "sandal1: #{sandal1.model} price: #{sandal1.price.round(2)}"
