@@ -4,6 +4,7 @@ class Cart < ApplicationRecord
 
   # LOGIC
   def sub_total
+   #armarlo con .reduce
     sum = 0
     self.order_items.each do |order_item|
       sum+= order_item.total_price
