@@ -3,7 +3,10 @@
     <div class="row">
     <% @sandals.each do |sandal| %>
       <div class="card m-2 rounded-card px-0 shadow" style="width: 18rem;">
-        <img src="https://media.istockphoto.com/photos/mans-legs-sitting-on-the-rocks-picture-id537333186?s=2048x2048" class="card-img-top image-border-top" style = "width:100%"  alt="...">
+      <%  if sandal.photo.key == nil  %>
+      <% else %>
+        <%= cl_image_tag sandal.photo.key  , style: 'min-height:300px;crop:fill;' %>
+      <% end %>
         <div class="card-body">
           <h5 class="card-title">Model: <%= sandal.model %></h5>
           <p class="card-text">Unit price of <%= number_to_currency(sandal.price) %></p>
@@ -15,7 +18,7 @@
           </p>
         </div>
       </div>
-      <% end %>
+    <% end %>
     </div>
   </div>
   <%= link_to "New sandal", new_sandal_path %>

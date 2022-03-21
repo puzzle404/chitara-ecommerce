@@ -34,6 +34,6 @@ class SandalsController < ApplicationController
 
   private
     def sandal_params
-      params.require(:sandal).permit(:model, :price, :description)
+      params.require(:sandal).permit(:model, :price, :description, :photo)
     end
 end
