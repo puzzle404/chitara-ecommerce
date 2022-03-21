@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li>
+            <%= link_to "My cart", cart_path, class: "nav-link" %>
+          </li>
+          <li>
             <%= link_to "See all products", sandals_path, class: "nav-link" %>
           </li>
           <li>
@@ -32,6 +35,9 @@
             </div>
           </li>
         <% else %>
+          <li>
+            <%= link_to "My cart", cart_path, class: "nav-link" %>
+          </li>
           <li>
             <%= link_to "See all products", sandals_path, class: "nav-link" %>
           </li>
