@@ -14,14 +14,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-  @order = Order.new(order_params)
-  @order.update(user_id: current_user.id)
-  add_items_to_order
+    @order = Order.new(order_params)
+    @order.update(user_id: current_user.id)
+    add_items_to_order
+    @order.save
+    reset_sessions_cart
 
-  @order.save
-  reset_sessions_cart
-
-  redirect_to root_path
+    redirect_to root_path
   end
 
 
@@ -34,7 +33,6 @@ private
       item.order_id = @order.id
       item.save
       @order.order_items << item
-
     end
   end
 
