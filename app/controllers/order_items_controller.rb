@@ -12,19 +12,19 @@ class OrderItemsController < ApplicationController
   @order_item.save!
 
 
-  redirect_to cart_path(@current_cart)
+  redirect_to cart_path
 end
 
 def destroy
   @order_item = OrderItem.find(params[:id])
   @order_item.destroy
-  redirect_to cart_path(@current_cart)
+  redirect_to cart_path
 end
 def add_quantity
   @order_item = OrderItem.find(params[:id])
   @order_item.quantity += 1
   @order_item.save
-  redirect_to cart_path(@current_cart)
+  redirect_to cart_path
 end
 
 def reduce_quantity
@@ -33,7 +33,7 @@ def reduce_quantity
     @order_item.quantity -= 1
   end
   @order_item.save
-  redirect_to cart_path(@current_cart)
+  redirect_to cart_path
 end
 
 private
