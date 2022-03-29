@@ -1,3 +1,5 @@
+
+
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -39,8 +41,8 @@
 
 <%# Aca listamos 3 sandalias como destacadas %>
 <div class="container">
-<div class="card-deck d-flex mt-5 mb-5">
-    <div class="card border-top-0 card2 card-chef">
+<div class="card-deck d-flex flex-wrap  mt-5 mb-5">
+    <div class="card  card2 card-chef" style="width:300px">
       <% if @sandal1.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal1.photo.key, class:"card-img-top" %>
@@ -54,28 +56,28 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef">
+    <div class="card card2 card-chef" style="width:300px">
       <% if @sandal2.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal2.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
             <h5 class="card-title text-center"> <%= @sandal2.model %> <%= @sandal2.description %> </h5>
-            <p class="card-text text-center"><%= @sanda2 %></p>
+            <p class="card-text text-center"><%= @sandal2.price  %></p>
             <div class="boton-descubrilo text-center">
               <%= link_to "Descubrilo", sandal_path(@sandal2), class: "btn btn-dark" %>
             </div>
           </div>
     </div>
 
-    <div class="card card2 card-chef">
+    <div class="card card2 card-chef" style="width:300px">
       <% if @sandal3.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal3.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
             <h5 class="card-title text-center"> <%= @sandal3.model %> <%= @sandal3.description %> </h5>
-            <p class="card-text text-center"><%= @sanda3 %></p>
+            <p class="card-text text-center"><%= @sandal3.price  %></p>
             <div class="boton-descubrilo text-center">
               <%= link_to "Descubrilo", sandal_path(@sandal3), class: "btn btn-dark" %>
             </div>

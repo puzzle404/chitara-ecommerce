@@ -1,15 +1,11 @@
 .carousel-inner > .carousel-item > img {
   object-fit: cover;
   max-width: 100%;
-  max-height: 600px;
+  max-height: 700px;
   width: auto;
   height: auto;
   display: block;
   object-position: left;
-}
-
-h1 {
-  font-size: 2.375rem;
 }
 
 .carousel-item h1 {
@@ -18,6 +14,7 @@ h1 {
   color: white;
   left: 50%;
   top: 50%;
+  font-size: 40px;
   transform: translate(-50%, -50%);
 }
 .carousel-item p {
@@ -28,17 +25,19 @@ h1 {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-@media only screen and (min-width: 601px) {
-  div.example,
-  h1 {
-    font-size: 100%;
-  }
+.carousel-inner > .carousel-item {
+  height: 38rem;
 }
+// @media only screen and (min-width: 601px) {
+//   div.example,
+//   h1 {
+//     font-size: 100%;
+//   }
+// }
 
-@media only screen and (max-width: 600px) {
-  div.example,
-  h1 {
-    font-size: 60%;
-  }
-}
+// @media only screen and (max-width: 600px) {
+//   div.example,
+//   h1 {
+//     font-size: 60%;
+//   }
+// }
