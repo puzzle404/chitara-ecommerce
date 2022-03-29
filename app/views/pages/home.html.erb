@@ -1,3 +1,5 @@
+
+
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -6,24 +8,25 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid" >
-        <%= image_tag 'Chitara1.png', class: "w-100" %>
-        <div class="carousel-caption d-none d-md-block">
-        <h2>Adventurer's Greater Companion</h2>
+        <%= image_tag 'Chitara1.png', class: "w-100 gradient" %>
+        <div class="example">
+          <h1 class=""><strong>Chitara, sandalias con historia</strong> </h1>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+    </div>
+    <div class="carousel-item img-fluid">
+
+       <%= image_tag 'Chitara2.jpeg', class: "w-100 gradient"  %>
+       <div class="example">
+          <h1 class=""><strong>Chitara, sandalias con historia</strong> </h1>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+    </div>
+    <div class="carousel-item  img-fluid">
+      <img src="https://images.unsplash.com/photo-1519753676168-bf48be28f1e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class=" w-100 gradient"  alt="...">
+      <div class="example">
+        <h1 class=""><strong>Chitara, sandalias con historia</strong> </h1>
         <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item img-fluid">
-       <%= image_tag 'Chitara2.jpeg', class: "w-100"  %>
-       <div class="carousel-caption d-none d-md-block">
-        <h2>Adventurer's Greater Companion</h2>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item img-fluid">
-      <img src="https://images.unsplash.com/photo-1519753676168-bf48be28f1e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class=" w-100"  alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h2>Adventurer's Greater Companion</h2>
-        <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
   </div>
@@ -37,7 +40,53 @@
   </button>
 </div>
 
+<%# Aca listamos 3 sandalias como destacadas %>
+<div class="container">
+<div class="card-deck d-flex flex-wrap  mt-5 mb-5">
+    <div class="card  card2 card-chef" style="width:300px">
+      <% if @sandal1.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @sandal1.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @sandal1.model%> <%= @sandal1.description%></h5>
+            <p class="card-text text-center"><%= @sandal1.price  %></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", sandal_path(@sandal1), class: "btn btn-dark" %>
+            </div>
+          </div>
+    </div>
 
+    <div class="card card2 card-chef" style="width:300px">
+      <% if @sandal2.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @sandal2.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @sandal2.model %> <%= @sandal2.description %> </h5>
+            <p class="card-text text-center"><%= @sandal2.price  %></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", sandal_path(@sandal2), class: "btn btn-dark" %>
+            </div>
+          </div>
+    </div>
+
+    <div class="card card2 card-chef" style="width:300px">
+      <% if @sandal3.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @sandal3.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @sandal3.model %> <%= @sandal3.description %> </h5>
+            <p class="card-text text-center"><%= @sandal3.price  %></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", sandal_path(@sandal3), class: "btn btn-dark" %>
+            </div>
+          </div>
+    </div>
+
+  </div>
+</div>
 
 <%= link_to "https://api.whatsapp.com/send?phone=+5492613831194"  do %>
       <%= image_tag 'whatsapp.png', class: "whatsapp img-fluid" %>

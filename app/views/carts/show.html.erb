@@ -3,7 +3,7 @@
 <h2>Mi carrito:</h2>
 <ul>
   <% @cart.order_items.each do |order_item| %>
-    <li>Item: <%= order_item.sandal.model %> | Price: <%= number_to_currency(order_item.sandal.price) %> | Quantity: <%= order_item.quantity %> | Total Price: <%= number_to_currency(order_item.total_price) %>
+    <li>- <%= cl_image_tag order_item.sandal.photo.key, height: 40, width: 40, crop: :fill %> | <%= order_item.sandal.model %> | Price: <%= number_to_currency(order_item.sandal.price) %> | Quantity: <%= order_item.quantity %> | Total Price: <%= number_to_currency(order_item.total_price) %>
     <ul>
       <li>
         <%= link_to "Add one", order_item_add_path(:id => order_item), method: :post %>
