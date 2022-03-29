@@ -1,5 +1,5 @@
 .rounded-card {
-  border-radius: 8px;
+  border-radius: 30px;
 }
 .image-border-top {
   border-top-left-radius: 8px;
@@ -14,4 +14,32 @@
 
 .shadow {
   box-shadow: 12px 12px 2px 1px rgba(53, 52, 52, 0.2);
+}
+
+.card2 img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
+.card-deck {
+  flex: none;
+  justify-content: space-between;
+}
+.card {
+  border-radius: 15px;
+}
+.card2 {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.card-chef {
+  height: 420px;
 }

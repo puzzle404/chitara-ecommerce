@@ -7,3 +7,37 @@
   display: block;
   object-position: left;
 }
+
+.carousel-item h1 {
+  position: absolute;
+  margin: 0;
+  color: white;
+  left: 50%;
+  top: 50%;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+}
+.carousel-item p {
+  position: absolute;
+  margin-top: 70px;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel-inner > .carousel-item {
+  height: 38rem;
+}
+// @media only screen and (min-width: 601px) {
+//   div.example,
+//   h1 {
+//     font-size: 100%;
+//   }
+// }
+
+// @media only screen and (max-width: 600px) {
+//   div.example,
+//   h1 {
+//     font-size: 60%;
+//   }
+// }
