@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :create, :destroy, :add_items_to_cart, :add_quantity, :reduce_quantity ]
 
   def create
   # Find associated sandal and current cart
