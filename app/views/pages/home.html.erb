@@ -44,20 +44,22 @@
 <%# Aca va una imagen de lago con un texto y un boton "comprar ahora" %>
 
 <div class="comprar-ya mt-5">
-  <div class="d-flex">
-    <div class=" col-6  mt-4 ">
-      <h1 class="text-center mb-3">Mis reviews</h1>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="d-block col-6" id="block-comprar">
+        <h1 class="ml-5">Chitara</h1>
+        <p>Sandalias con historia, hechas con materiales reciclados</p>
+        <%= button_to "Comprar ahora", sandals_path, class: 'btn btn-primary mx-auto px-5 align-center ' %>
     </div>
-    <div class="" style=" ">
-      <%= image_tag src='combinaciones1.jpeg', class:"img-fluid", style:"width:400px" %>
+    <div class="col-6" id="img-block-comprar">
+      <%= image_tag src='combinaciones1.jpeg', class:"img-fluid"%>
     </div>
   </div>
 </div>
 
 <%# Aca listamos 3 sandalias como destacadas %>
-<div class="container">
+<div class="">
   <div class="text-center mt-4"><h2>Los mas vendidos</h2></div>
-<div class="card-deck d-flex flex-wrap justify-content-around mt-5 mb-5">
+  <div class="card-deck d-flex flex-wrap justify-content-around mt-5 mb-5">
     <div class="card  card2 card-chef" style="width:300px">
       <% if @sandal1.photo.key == nil %>
       <% else %>
