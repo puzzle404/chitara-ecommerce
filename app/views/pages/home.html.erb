@@ -43,7 +43,7 @@
 
 <%# Aca va una imagen de lago con un texto y un boton "comprar ahora" %>
 
-<div class="comprar-ya mt-5">
+<div class="container comprar-ya mt-5">
   <div class="d-flex align-items-center justify-content-center">
     <div class="d-block col-6" id="block-comprar">
         <h1 class="ml-5">Chitara</h1>
@@ -59,7 +59,7 @@
 <%# Aca listamos 3 sandalias como destacadas %>
 <div class="container">
   <div class="text-center mt-4"><h2>Los mas vendidos</h2></div>
-  <div class="card-deck d-flex flex-wrap justify-content-around mt-5 mb-5">
+  <div class="card-deck d-flex flex-wrap justify-content-between mt-5 mb-5">
     <div class="card  card2 card-chef" style="width:300px">
       <% if @sandal1.photo.key == nil %>
       <% else %>
