@@ -59,7 +59,7 @@
 <%# Aca listamos 4 sandalias como destacadas %>
 <div class="container destacados ">
   <div class="text-center mb-5 "><h2 >Los mas vendidos</h2></div>
-  <div class="card-deck d-flex flex-wrap justify-content-between mt-5 mb-5">
+  <div class="card-deck d-flex flex-wrap  mt-5 mb-5" id="espaciado">
     <div class="card  card2 card-chef" style="width:300px">
       <% if @sandal1.photo.key == nil %>
       <% else %>
@@ -74,7 +74,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="width:300px">
+    <div class="card card2 card-chef" style="max-width:300px">
       <% if @sandal2.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal2.photo.key, class:"card-img-top" %>
@@ -88,7 +88,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="width:300px">
+    <div class="card card2 card-chef" style="max-width:300px">
       <% if @sandal3.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal3.photo.key, class:"card-img-top" %>
@@ -102,7 +102,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="width:300px">
+    <div class="card card2 card-chef" style="max-width:300px">
       <% if @sandal4.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal4.photo.key, class:"card-img-top" %>
