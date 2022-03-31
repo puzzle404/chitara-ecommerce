@@ -41,26 +41,12 @@
   </button>
 </div>
 
-<%# Aca va una imagen de lago con un texto y un boton "comprar ahora" %>
-
-<div class="container comprar-ya mt-5 mb-5">
-  <div class="row flex-wrap align-items-center justify-content-center">
-    <div class="d-block col-md-6 col-sm-6" id="block-comprar">
-        <h1 class="ml-5 mb-4">Chitara</h1>
-        <p class="text-secondary ">Sandalias con historia, hechas a mano con materiales reciclados con mucho amor</p>
-        <%= button_to "Comprar ahora", sandals_path, class: 'btn btn-primary mx-auto px-5  mt-3 align-center ' %>
-    </div>
-    <div class="col-md-6 col-sm-6" id="img-block-comprar">
-      <%= image_tag src='sandalia4.jpeg', class:"img-fluid "%>
-    </div>
-  </div>
-</div>
 
 <%# Aca listamos 4 sandalias como destacadas %>
 <div class="container destacados ">
   <div class="text-center mb-5 "><h2 >Los mas vendidos</h2></div>
   <div class="card-deck d-flex flex-wrap  mt-5 mb-5" id="espaciado">
-    <div class="card  card2 card-chef" style="width:300px">
+    <div class="card  card2 card-chef mb-3" style="width:300px">
       <% if @sandal1.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal1.photo.key, class:"card-img-top" %>
@@ -74,7 +60,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="max-width:300px">
+    <div class="card card2 card-chef mb-3" style="max-width:300px">
       <% if @sandal2.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal2.photo.key, class:"card-img-top" %>
@@ -88,7 +74,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="max-width:300px">
+    <div class="card card2 card-chef mb-3" style="max-width:300px">
       <% if @sandal3.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal3.photo.key, class:"card-img-top" %>
@@ -102,7 +88,7 @@
           </div>
     </div>
 
-    <div class="card card2 card-chef" style="max-width:300px">
+    <div class="card card2 card-chef mb-3" style="max-width:300px">
       <% if @sandal4.photo.key == nil %>
       <% else %>
         <%= cl_image_tag  @sandal4.photo.key, class:"card-img-top" %>
@@ -118,6 +104,22 @@
 
   </div>
 </div>
+
+<%# Aca va una imagen de lago con un texto y un boton "comprar ahora" %>
+
+<div class="container comprar-ya mt-5 mb-5">
+  <div class="row flex-wrap align-items-center justify-content-center">
+    <div class="d-block col-md-6 col-sm-6" id="block-comprar">
+        <h1 class="ml-5 mb-4">Chitara</h1>
+        <p class="text-secondary ">Sandalias con historia, hechas a mano con materiales reciclados con mucho amor</p>
+        <%= button_to "Comprar ahora", sandals_path, class: 'btn btn-primary mx-auto px-5  mt-3 align-center ' %>
+    </div>
+    <div class="col-md-6 col-sm-6" id="img-block-comprar">
+      <%= image_tag src='sandalia4.jpeg', class:"img-fluid "%>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to "https://api.whatsapp.com/send?phone=+5492613831194"  do %>
       <%= image_tag 'whatsapp.png', class: "whatsapp img-fluid" %>
