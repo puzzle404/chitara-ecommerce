@@ -41,17 +41,16 @@
 }
 
 .card-chef {
-  height: 420px;
+  max-height: 420px;
 }
 
 .comprar-ya {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
-
 }
 
 #block-comprar {
-  padding-left: 85px;
+  padding-left: 50px;
 }
 
 #img-block-comprar {
@@ -59,6 +58,19 @@
 }
 
 #img-block-comprar img {
-  height: 520px;
-  width: 100%;
+  max-height: 520px;
+  max-width: 100%;
+  width: 650px;
+}
+
+.destacados,
+h2 {
+  margin-top: 65px;
+  margin-bottom: 65px;
+}
+
+@media only screen and (max-width: 600px) {
+  div#block-comprar {
+    margin-bottom: 40px;
+  }
 }

@@ -1,6 +1,6 @@
 
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel  slide " data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -43,22 +43,22 @@
 
 <%# Aca va una imagen de lago con un texto y un boton "comprar ahora" %>
 
-<div class="container comprar-ya mt-5">
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="d-block col-6" id="block-comprar">
-        <h1 class="ml-5">Chitara</h1>
-        <p>Sandalias con historia, hechas con materiales reciclados</p>
-        <%= button_to "Comprar ahora", sandals_path, class: 'btn btn-primary mx-auto px-5 align-center ' %>
+<div class="container comprar-ya mt-5 mb-5">
+  <div class="row flex-wrap align-items-center justify-content-center">
+    <div class="d-block col-md-6 col-sm-6" id="block-comprar">
+        <h1 class="ml-5 mb-4">Chitara</h1>
+        <p class="text-secondary ">Sandalias con historia, hechas a mano con materiales reciclados con mucho amor</p>
+        <%= button_to "Comprar ahora", sandals_path, class: 'btn btn-primary mx-auto px-5  mt-3 align-center ' %>
     </div>
-    <div class="col-6" id="img-block-comprar">
-      <%= image_tag src='combinaciones1.jpeg', class:"img-fluid"%>
+    <div class="col-md-6 col-sm-6" id="img-block-comprar">
+      <%= image_tag src='sandalia4.jpeg', class:"img-fluid "%>
     </div>
   </div>
 </div>
 
-<%# Aca listamos 3 sandalias como destacadas %>
-<div class="container">
-  <div class="text-center mt-4"><h2>Los mas vendidos</h2></div>
+<%# Aca listamos 4 sandalias como destacadas %>
+<div class="container destacados ">
+  <div class="text-center mb-5 "><h2 >Los mas vendidos</h2></div>
   <div class="card-deck d-flex flex-wrap justify-content-between mt-5 mb-5">
     <div class="card  card2 card-chef" style="width:300px">
       <% if @sandal1.photo.key == nil %>
@@ -69,7 +69,7 @@
             <h5 class="card-title text-center"> <%= @sandal1.model%> <%= @sandal1.description%></h5>
             <p class="card-text text-center"><%= @sandal1.price  %></p>
             <div class="boton-descubrilo text-center">
-              <%= link_to "Descubrilo", sandal_path(@sandal1), class: "btn btn-dark" %>
+              <%= link_to "Descubrilo", sandal_path(@sandal1), class: "btn btn-primary" %>
             </div>
           </div>
     </div>
@@ -83,7 +83,7 @@
             <h5 class="card-title text-center"> <%= @sandal2.model %> <%= @sandal2.description %> </h5>
             <p class="card-text text-center"><%= @sandal2.price  %></p>
             <div class="boton-descubrilo text-center">
-              <%= link_to "Descubrilo", sandal_path(@sandal2), class: "btn btn-dark" %>
+              <%= link_to "Descubrilo", sandal_path(@sandal2), class: "btn btn-primary" %>
             </div>
           </div>
     </div>
@@ -97,7 +97,21 @@
             <h5 class="card-title text-center"> <%= @sandal3.model %> <%= @sandal3.description %> </h5>
             <p class="card-text text-center"><%= @sandal3.price  %></p>
             <div class="boton-descubrilo text-center">
-              <%= link_to "Descubrilo", sandal_path(@sandal3), class: "btn btn-dark" %>
+              <%= link_to "Descubrilo", sandal_path(@sandal3), class: "btn btn-primary" %>
+            </div>
+          </div>
+    </div>
+
+    <div class="card card2 card-chef" style="width:300px">
+      <% if @sandal4.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @sandal4.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @sandal4.model %> <%= @sandal4.description %> </h5>
+            <p class="card-text text-center"><%= @sandal4.price  %></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", sandal_path(@sandal4), class: "btn btn-primary" %>
             </div>
           </div>
     </div>
