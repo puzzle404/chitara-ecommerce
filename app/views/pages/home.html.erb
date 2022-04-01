@@ -46,8 +46,10 @@
   <div class="text-center mb-5 "><h2 >Los mas vendidos</h2></div>
   <div class="card-deck d-flex flex-wrap  mt-5 mb-5" id="espaciado">
     <div class="card  card2 card-chef mb-3" style="width:300px">
-      <% if @sandal1.photo.key === nil %>
+      <% if @sandal1.photo.key == nil %>
+
       <% else %>
+
         <%= cl_image_tag  @sandal1.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
@@ -60,7 +62,7 @@
     </div>
 
     <div class="card card2 card-chef mb-3" style="max-width:300px">
-      <% if @sandal2.photo.key == nil %>
+      <% if @sandal2.photo.key == nil || @sandal2 == nil %>
       <% else %>
         <%= cl_image_tag  @sandal2.photo.key, class:"card-img-top" %>
       <% end %>
