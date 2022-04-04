@@ -12,7 +12,7 @@
 }
 
 figure {
-  position: relative
+  position: relative;
 }
 
 figcaption {
@@ -23,5 +23,9 @@ figcaption {
   left: 0;
   top: 0;
   text-shadow: 0 0 1px white;
-  font-weight:bold;
+  font-weight: bold;
+}
+
+.margins {
+  margin-top: 20px;
 }
