@@ -1,9 +1,11 @@
 
-<div class="container mt-5">
-  <h2>Mi carrito:</h2>
+<div class="container mt-4">
+  <h2><strong> Mi carrito: </strong></h2>
   <ul>
   <% if @cart.order_items.empty? %>
-    <%= image_tag "https://www.seekpng.com/png/detail/117-1170538_404-your-cart-is-empty.png" %>
+    <li class="d-flex justify-content-center">
+      <%= image_tag "https://www.seekpng.com/png/detail/117-1170538_404-your-cart-is-empty.png" %>
+    </li>
   <% else %>
       <% @cart.order_items.each do |order_item| %>
         <li>- <%= cl_image_tag order_item.sandal.photo.key, height: 40, width: 40, crop: :fill %> | <%= order_item.sandal.model %> | Price: <%= number_to_currency(order_item.sandal.price) %> | Quantity: <%= order_item.quantity %> | Total Price: <%= number_to_currency(order_item.total_price) %>
