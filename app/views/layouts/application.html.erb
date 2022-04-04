@@ -10,7 +10,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
   </head>
-  <body>
+  <!--Body class needed for footer to stay at the bottom of the page-->
+  <body class="d-flex flex-column min-vh-100">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
