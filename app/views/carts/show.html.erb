@@ -8,60 +8,61 @@
     </li>
   <% else %>
 
-  <div class="">
-    <div class="row">
+
+  <div class="row">
     <div class="col-8">
-    <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">Imagen</th>
-        <th scope="col">Producto</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Subtotal</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <% @cart.order_items.each do |order_item| %>
-      <tbody>
-        <tr>
-          <th scope="row"><li style="list-style-type:none"> <%= cl_image_tag order_item.sandal.photo.key, height: 40, width: 40, crop: :fill %></th>
-          <td><%= order_item.sandal.model %></td>
-          <td class="d-flex justify-content-center ">
-          <li style="list-style-type:none"><%= button_to "+", order_item_add_path(:id => order_item), method: :post, class: "rounded-circle" %></li>
-          <li style="list-style-type:none" class="mx-2"><%= order_item.quantity %></li>
-          <li style="list-style-type:none"><%= button_to "-", order_item_reduce_path(:id => order_item), method: :post, class: "rounded-circle" %></li>
-          </td>
-          <td><%= number_to_currency(order_item.sandal.price) %></td>
-          <td><%= number_to_currency(order_item.total_price) %></td>
-          <td><%= link_to "Remove item", order_item_path(order_item), method: :delete %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <% @cart.order_items.each do |order_item| %>
+          <tbody>
+            <tr>
+              <th scope="row"><li style="list-style-type:none"> <%= cl_image_tag order_item.sandal.photo.key, height: 40, width: 40, crop: :fill %></th>
+              <td><%= order_item.sandal.model %></td>
+              <td class="d-flex justify-content-center ">
+              <li style="list-style-type:none"><%= button_to "-", order_item_reduce_path(:id => order_item), method: :post, class: "btn btn-primary rounded-circle" %></li>
+              <li style="list-style-type:none" class="mx-2"><%= order_item.quantity %></li>
+              <li style="list-style-type:none"><%= button_to "+", order_item_add_path(:id => order_item), method: :post, class: "btn btn-primary rounded-circle" %></li>
+              </td>
+              <td><%= number_to_currency(order_item.sandal.price) %></td>
+              <td><%= number_to_currency(order_item.total_price) %></td>
+              <td><%= link_to "Remove item", order_item_path(order_item), method: :delete %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
     </div>
 
-    <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  <div class="col-4 border">
+    <form>
+      <div class="form-group mt-2 pb-3 rounded border-bottom ">
+        <label for="exampleFormControlInput1">Cupón de descuento</label>
+        <div class="d-flex ">
+          <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="Pega tu código">
+          <%= button_to "Aplicar", href="#", method: :post, class:"btn btn-primary" %>
         </div>
-
-      </form>
       </div>
+    </form>
   </div>
-
   </div>
-
-
-
-
+    <% end %>
 </div>
+
+
+
+
+
     </ul>
     <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
     <%= link_to "Proceed to checkout", new_order_path %><br>
     <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %> <br>
 
     <%= link_to "Mi carrito", cart_path %><br>
-  <% end %>
