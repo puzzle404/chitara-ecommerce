@@ -1,6 +1,6 @@
 
 <div class="container mt-4">
-  <h2 class="text-center"><strong> Mi carrito: </strong></h2>
+  <h2 class="text-center"><strong> Mi carrito </strong></h2>
   <ul>
   <% if @cart.order_items.empty? %>
     <li class="d-flex justify-content-center">
@@ -41,28 +41,22 @@
       </table>
     </div>
 
-  <div class="col-4 border">
+  <div class="col-4 border p-4">
     <form>
-      <div class="form-group mt-2 pb-3 rounded border-bottom ">
-        <label for="exampleFormControlInput1">Cupón de descuento</label>
+      <div class="form-group  pb-4 rounded border-bottom ">
+        <label for="exampleFormControlInput1" class="mb-2"><strong>Cupón de descuento</strong> </label>
         <div class="d-flex ">
           <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="Pega tu código">
           <%= button_to "Aplicar", href="#", method: :post, class:"btn btn-primary" %>
         </div>
+
       </div>
+        <p class="text-secondary mt-3">Sub total: <%= number_to_currency(@cart.sub_total) %></p>
+        <%= link_to "Proceed to checkout", new_order_path, class:"btn btn-primary" %><br>
+
     </form>
   </div>
   </div>
     <% end %>
+    <%= button_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-primary " %> <br>
 </div>
-
-
-
-
-
-    </ul>
-    <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-    <%= link_to "Proceed to checkout", new_order_path %><br>
-    <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %> <br>
-
-    <%= link_to "Mi carrito", cart_path %><br>

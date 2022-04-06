@@ -1,10 +1,12 @@
 class SandalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :new, :edit, :update]
+  skip_before_action :authenticate_user!, only: [ :index, :new, :edit, :update, :show]
   def index
     @sandals = Sandal.all
   end
- def show
- end
+
+  def show
+    @sandal = Sandal.find(params[:id])
+  end
 
 
   def new
